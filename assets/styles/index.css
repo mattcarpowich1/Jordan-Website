@@ -1,8 +1,15 @@
 :root {
-    --main-bg-black: #191919;
-    --main-bg-white: #F1F1F0; 
-    --margin-sides: 16px;
-    --big-responsive-font: calc(56px + (56 - 24) * (100vw - 360px)/(960-360));;
+  --main-bg-black: #191919;
+  --main-bg-white: #F1F1F0; 
+  --margin-sides: 16px;
+  --margin-sides-narrow: 32px;
+  --big-responsive-font: calc(56px + (56 - 24) * (100vw - 360px)/(960-360));
+  --medium-responsive-font: calc(48px + (48 - 20) * (100vw - 360px)/(960-360));
+  --small-responsive-font: calc(24px + (24 - 16) * (100vw - 360px)/(960-360));
+}
+
+html, body {
+  background-color: var(--main-bg-white);
 }
 
 /* NAVBAR */
@@ -23,7 +30,7 @@ nav.nav {
   box-shadow: 0px 3px 12px -1px rgba(0,0,0,0.41);
 }
 
-h2.logo {
+h1.logo {
   font-family: 'Oswald', sans-serif;
   font-weight: 500;
   font-size: 32px;
@@ -49,7 +56,7 @@ ul.nav-menu li {
   margin-left: 24px;
   border: 1px solid var(--main-bg-black);
   width: 88px;
-  padding: 4px;
+  /*padding: 4px;*/
 }
 
 ul.navv-menu li:nth-child(1) {
@@ -58,7 +65,7 @@ ul.navv-menu li:nth-child(1) {
 
 button.btn-nav {
   margin: 0;
-  padding: 0;
+  padding: 4px;
   background: none;
   width: 100%;
   border: none;
@@ -66,6 +73,14 @@ button.btn-nav {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
+  transition: all .2s ease;
+}
+
+button.btn-nav:hover {
+  cursor: pointer;
+  background: var(--main-bg-black);
+  color: var(--main-bg-white);
+  transition: all .2s ease;
 }
 
 img.nav-burger {
@@ -74,7 +89,7 @@ img.nav-burger {
 
 /* MAIN SECTION ON LANDING PAGE */
 main {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   height: 100vh;
@@ -89,7 +104,7 @@ main {
   align-items: center;
 }
 
-h1.mission-statement {
+h2.mission-statement {
   margin: 0 var(--margin-sides);
   z-index: 2;
   font-family: 'Roboto Slab', serif;
@@ -98,6 +113,39 @@ h1.mission-statement {
   color: var(--main-bg-white);
   text-align: center;
   text-shadow: 0px 0px 19px rgba(0, 0, 0, 0.8);
+}
+
+/* OUR PRODUCTS SECTION ON LANDING PAGE */
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section.section-medium {
+  height: 380px;
+  width: 100%;
+}
+
+h3.section-header {
+  font-family: 'Roboto Slab', serif;
+  font-size: var(--medium-responsive-font);
+  color: var(--main-bg-black);
+  margin-top: -32px;
+  margin-left: var(--margin-sides-narrow);
+  margin-right: var(--margin-sides-narrow);
+  margin-bottom: 24px;
+}
+
+p.products-description {
+  font-family: 'Oswald', sans-serif;
+  font-size: var(--small-responsive-font);
+  font-weight: 300;
+  color: var(--main-bg-black);
+  margin-left: var(--margin-sides-narrow);
+  margin-right: var(--margin-sides-narrow);
+  text-align: center;
 }
 
 /* MOBILE */
