@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function(event) { 
   var veil = document.querySelector('.veil');
   var main = document.querySelector('main');
+  var missionStatement = document.querySelector('.mission-statement');
+  
 
   window.addEventListener('scroll', function(event) {
     // make main section fade to black

@@ -1,5 +1,6 @@
 :root {
   --main-bg-black: #191919;
+  --main-bg-gray: #8D8B8B;
   --main-bg-white: #F1F1F0; 
   --margin-sides: 16px;
   --margin-sides-narrow: 32px;
@@ -73,9 +74,11 @@ button.btn-nav {
   font-weight: inherit;
   color: inherit;
   transition: all .2s ease;
+  outline: none;
 }
 
-button.btn-nav:hover {
+button.btn-nav:hover, 
+button.btn-nav:active {
   cursor: pointer;
   background: var(--main-bg-black);
   color: var(--main-bg-white);
@@ -125,6 +128,22 @@ h2.mission-statement {
   color: var(--main-bg-white);
   text-align: center;
   text-shadow: 0px 0px 19px rgba(0, 0, 0, 0.8);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  /*animation-iteration-count: 1;*/
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 /* OUR PRODUCTS SECTION ON LANDING PAGE */
@@ -144,10 +163,12 @@ h3.section-header {
   font-family: 'Roboto Slab', serif;
   font-size: var(--medium-responsive-font);
   color: var(--main-bg-black);
+  width: calc(100vw - 64px);
+  text-align: center;
   margin-top: -32px;
-  margin-left: var(--margin-sides-narrow);
-  margin-right: var(--margin-sides-narrow);
   margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--main-bg-gray);
 }
 
 p.products-description {
