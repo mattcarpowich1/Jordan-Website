@@ -16,9 +16,9 @@ html, body {
 /* NAVBAR */
 nav.nav {
   position: fixed;
-  height: 72px;
+  height: 100px;
   background-color: var(--main-bg-white);
-  top: 0;
+  top: -28px;
   left: 0;
   width: 100%;
   display: flex;
@@ -29,6 +29,10 @@ nav.nav {
   -webkit-box-shadow: 0px 3px 12px -1px rgba(0,0,0,0.41);
   -moz-box-shadow: 0px 3px 12px -1px rgba(0,0,0,0.41);
   box-shadow: 0px 3px 12px -1px rgba(0,0,0,0.41);
+}
+
+nav > * {
+  margin-bottom: -27px;
 }
 
 h1.logo {
