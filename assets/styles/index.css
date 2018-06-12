@@ -2,6 +2,7 @@
     --main-bg-black: #191919;
     --main-bg-white: #F1F1F0; 
     --margin-sides: 16px;
+    --big-responsive-font: calc(56px + (56 - 24) * (100vw - 360px)/(960-360));;
 }
 
 /* NAVBAR */
@@ -67,6 +68,10 @@ button.btn-nav {
   color: inherit;
 }
 
+img.nav-burger {
+  display: none;
+}
+
 /* MAIN SECTION ON LANDING PAGE */
 main {
   position: absolute;
@@ -88,9 +93,23 @@ h1.mission-statement {
   margin: 0 var(--margin-sides);
   z-index: 2;
   font-family: 'Roboto Slab', serif;
-  font-size: 56px;
+  font-size: var(--big-responsive-font);
   font-weight: 400;
   color: var(--main-bg-white);
   text-align: center;
   text-shadow: 0px 0px 19px rgba(0, 0, 0, 0.8);
+}
+
+/* MOBILE */
+@media screen and (max-width: 640px) { 
+  ul.nav-menu {
+    display: none;
+  }
+
+  img.nav-burger {
+    display: block;
+    height: 48px;
+    width: auto;
+    margin-right: var(--margin-sides);
+  }
 }
